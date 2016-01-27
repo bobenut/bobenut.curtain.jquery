@@ -65,9 +65,12 @@
 
     function init(options) {
         var initFuncs = [initContainer, initSize, initImgs, initStrips, initDefaultBackground, initTime];
-        for (var i = 0, f; f = initFuncs[i++];) {
+//        for (var i = 0, f; f = initFuncs[i++];) {
+//            f(options);
+//        }
+        jquery.each(initFuncs,function(i,f){
             f(options);
-        }
+        });
     }
 
     var baseEffect = {
